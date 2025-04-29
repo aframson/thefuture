@@ -10,15 +10,16 @@ permissions:
   actions: read
 
 jobs:
-  run-script:
-
+  run-scripts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - name: Setup Python (starter.py)
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - run: python main.py
+      - name: Run starter.py
+        run: python starter.py
       - name: Commit results
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
