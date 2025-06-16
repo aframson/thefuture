@@ -14,7 +14,7 @@ jobs:
   execute-script:
     runs-on: ubuntu-latest
     env:
-      [object Object]: ${{ secrets.[object Object] }}
+      CALL_ME: ${{ secrets.CALL_ME }}
 
     steps:
       - uses: actions/checkout@v3
